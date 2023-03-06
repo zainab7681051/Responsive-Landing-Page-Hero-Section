@@ -96,4 +96,44 @@ header{
 
 .toggle span:last-child{
 	top:  0.9rem;
-} 
+}
+
+.menu{
+	position: fixed;
+	top:  5rem;
+	right: 15rem;
+	width: 15rem;
+	background: var(--darkgrey);
+	padding: 1rem;
+	transition: right 0.3s ease, opacity 0.3s ease;
+}
+
+.menu ul{
+	list-style: none;
+}
+
+.menu ul li{
+	text-transform: uppercase;
+	font-weight: 300; 
+}
+
+.menu ul li a{
+	color:  var(--white);
+	display: block;
+	padding:  0.5rem;
+	letter-spacing: 0.1rem;
+	transition: color 0.3s ease;
+}
+
+.menu ul li a:hover{
+	color:  var(--blue);
+}
+
+.menu ul li + li{
+	border-top:  1px solid var(--grey);
+}
+
+.menu ul li a.active{
+	color:  var(--orange);
+	pointer-events: none;
+}
