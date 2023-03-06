@@ -85,7 +85,7 @@ header{
 .toggle span{
 	width: 100%;
 	display: block;
-	border-bottom: 1px solid var(--white);
+	border-bottom: 2px solid var(--white);
 	position: absolute;
 	transition: top 0.3s ease, transform 0.3s ease;
 }
@@ -98,12 +98,25 @@ header{
 	top:  0.9rem;
 }
 
+.toggle.active span{
+	top:  0.75rem;
+}
+
+.toggle.active span:first-child{
+	transform:  rotate(45deg);
+}
+
+.toggle.active span:last-child{
+	transform:  rotate(-45deg);
+}
+
 .menu{
 	position: fixed;
 	top:  5rem;
-	right: 15rem;
+	right: -15rem;
 	width: 15rem;
 	background: var(--darkgrey);
+	opacity: 0;
 	padding: 1rem;
 	transition: right 0.3s ease, opacity 0.3s ease;
 }
@@ -136,4 +149,47 @@ header{
 .menu ul li a.active{
 	color:  var(--orange);
 	pointer-events: none;
+}
+
+.menu.active {
+	right: var(--containerXPadding);
+	opacity: 1;
+}
+
+@media (min-width: 768px){
+	:root{
+		--containerXPadding: 2rem;
+	}
+}
+
+@media (min-width: 1000px){
+	:root{
+		--containerXPadding: 3rem;
+	}
+	.logo{
+		width: 6rem;
+	}
+	.toggle{
+		display: none;
+	}
+	.menu{
+		background: transparent;
+		position: static;
+		top:  auto;
+		right:  auto;
+		opacity: 1;
+		width: auto;
+		padding: 0;
+	}
+	.menu ul{
+		display: flex;
+		gap:  3rem;
+	}
+	.menu ul li a{
+		color:  var(--white);
+		padding: 0;
+	}
+	.menu ul li + li{
+		border-top: none;
+	}
 }
