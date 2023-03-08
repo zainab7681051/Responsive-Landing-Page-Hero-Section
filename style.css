@@ -5,7 +5,7 @@
 }
 
 :root{
-	--red: #c1aba6;
+	--red: #ff0358;
 	--orange:  #f9a71c;
 	--black:  #000;
 	--white: #fff;
@@ -179,13 +179,19 @@ header{
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-image: url('img/unt2.jpg');
+	background-image: url('img/unit2-m.jpg');
 	background-size: contain;
 	background-position: right bottom;
 	background-repeat: no-repeat;
 	background-color: var(--red);
 	background-blend-mode: multiply;
 	z-index: -1;
+	transform: translateX(100%)
+}
+
+.heading-block{
+	transform: translateY(-50vh);
+	opacity: 0;
 }
 
 .hero{
@@ -242,6 +248,8 @@ header{
 .block p{
 	font-weight: 300;
 	margin-bottom: 2rem;
+	opacity: 0;
+	transform: translateY(50vh)
 }
 
 .btn{
@@ -304,21 +312,32 @@ header{
 	display: flex;
 	gap: 1rem;
 	flex-direction: column;
+	opacity: 0;
 }
 
 .arrow{
 	margin: 2rem 0;
 	font-size: 2rem;
+	opacity: 0;
 }
 
-@media(max-width: 768px ){
-	.bg{
-		background-image: none; 
-	}
+.strip{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 25%;
+	bottom: 0;
+	background-color: var(--blue);
+	mix-blend-mode: hue;
+	transform: translateX(-100vw)
 }
+
 @media (min-width: 768px){
 	:root{
 		--containerXPadding: 2rem;
+	}
+	.bg{
+		background-image: url('img/unit2-t.jpg')
 	}
 	.button-group{
 		width: fit-content;
@@ -329,9 +348,13 @@ header{
 	}
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1260px){
 	:root{
 		--containerXPadding: 3rem;
+	}
+
+	.bg{
+		background-image: url('img/unit2.jpg')
 	}
 
 	.logo{
